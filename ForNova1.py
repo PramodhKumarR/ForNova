@@ -15,7 +15,7 @@ def extract_rate_information(room_type, offer):
     }
 #To read CSV file to the pandas dataframe
 df = pd.read_csv(r'C:\pramo\Downloads\Details.csv')
-#Empty list to store the extracted rates
+#Empty list to store the extracted price
 rates = []
 #Empty dictionary to store captured JSON
 json_data = {}
@@ -40,4 +40,4 @@ for _, row in df.iterrows():
                 rates.append(json.dumps(rate))
                 print(json.dumps(rate, indent=4, sort_keys=True))#printing data output in JASON Format
     else:
-        print(f"Error: Unable to fetch data. Status code {response.status_code}")#incase if the data extraction fails due to an error
+        print(f"Error: Data cannot be fetched due to. Status code {response.status_code}")#incase if the data extraction fails due to an error
